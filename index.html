@@ -13,6 +13,7 @@
         html, body{
             text-align: center;
             font-family: 'Noto Sans KR', sans-serif !important;
+            word-break: keep-all;
             /* background-color: rgb(255, 247, 246) */
         }
         form{
@@ -61,6 +62,9 @@
         </div>
     </div>
     <br><br>
+    <h1 style="font-weight: bold;">바오벗나무 지원하기</h1>
+    <p>성함과 전화번호, 지원 분야만 알려주시면 저희 리크루팅 팀에서 연락드리겠습니다!</p>
+    <br>
     <form method="post" data-email="baobutnamu@gmail.com" action="https://script.google.com/macros/s/AKfycbxCigyXS1xLj-raWP7zcYhw8HzuP9n3fAWKfBkF/exec" id="form">
         <div class="form-floating mb-3">
             <input type="text" name="성함" class="form-control" id="성함" placeholder="홍길동" oninput="delError('#성함')" required>
@@ -116,11 +120,21 @@
             </div>
             <label for="지원분야">지원 분야<a style="color: rgb(217, 48, 37);"> *</a></label>
         </div>
-        <div style="text-align: center; margin-bottom: 10px;">
-            <div class="form-check" style="display: inline-block;" onclick="delError('#개인정보동의');">
-                <input class="form-check-input" type="checkbox" value="동의함" id="개인정보동의" name="개인정보동의" required>
-                <label class="form-check-label" for="개인정보동의">바오벗나무 지원에 관련한 개인정보처리방침에 동의하십니까?</label>
+        <div class="form-floating mb-3">
+            <div class="form-control" id="개인정보처리방침" style="height: fit-content; text-align: left;">
+                <div style="margin-top: 10px;">
+                    <a>1. 본 지원서에 입력되는 모든 개인정보는 바오벗나무 지원만을 목적으로 하며, 이 목적 외의 다른 목적으로 이용되지 않습니다.</a><br>
+                    <a>2. 본 지원서에 입력하시는 모든 개인정보는 지원자의 합격 여부가 결정된 후, 합격 시 탈퇴 시까지, 불합격 시 1주일 이내로 파기됩니다.</a><br>
+                    <a>3. 개인정보처리에 관련하여 기타 문의가 있거나, 개인정보의 빠른 파기 등을 요청하고 싶으실 경우, baobutnamu@gmail.com으로 문의주시면 도와드리겠습니다.</a><br>
+                    <div style="text-align: center; margin-bottom: 10px; margin-top: 10px;">
+                        <div class="form-check" style="display: inline-block;" onclick="delError('#개인정보동의');">
+                            <input class="form-check-input" type="checkbox" value="동의함" id="개인정보동의" name="개인정보동의" required>
+                            <label class="form-check-label" for="개인정보동의">바오벗나무 지원에 관련한 개인정보처리방침에 동의하십니까?</label>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <label for="개인정보처리방침">개인정보처리방침<a style="color: rgb(217, 48, 37);"> *</a></label>
         </div>
         <input type="button" class="btn btn-primary" value="지원하기" id="sumbitting" onclick="submitData()">
         <button class="btn btn-primary" style="display: none;" type="button" id="submited" disabled>
@@ -128,7 +142,7 @@
             지원하기
         </button>
     </form>
-    <br><br>
+    <br><br><br>
     <div style="position: fixed; bottom: 0px; z-index: -10; max-height: 40vh;">
         <img src="background.png" width="100%" style="opacity: 50%;">
     </div>
