@@ -63,7 +63,7 @@
     </div>
     <br><br>
     <h1 style="font-weight: bold;">바오벗나무 지원하기</h1>
-    <p>성함과 전화번호, 지원 분야만 알려주시면 저희 리크루팅 팀에서 연락드리겠습니다!</p>
+    <p style="width: 90%;">성함과 전화번호, 지원 분야만 알려주시면 저희 리크루팅 팀에서 연락드리겠습니다!</p>
     <br>
     <form method="post" data-email="baobutnamu@gmail.com" action="https://script.google.com/macros/s/AKfycbxCigyXS1xLj-raWP7zcYhw8HzuP9n3fAWKfBkF/exec" id="form">
         <div class="form-floating mb-3">
@@ -148,6 +148,7 @@
     </div>
     <script>
         function addDash(){
+            document.getElementById("전화번호").value = document.getElementById("전화번호").value.replace("--", "");
             if(document.getElementById("전화번호").value.length == 3){
                 document.getElementById("전화번호").value += "-";
             } else if(document.getElementById("전화번호").value.length == 8){
