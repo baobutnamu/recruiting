@@ -129,8 +129,8 @@
         </button>
     </form>
     <br><br>
-    <div style="position: fixed; bottom: -120px; z-index: -10;">
-        <img src="desert.png" width="100%" style="opacity: 50%;">
+    <div style="position: fixed; bottom: 0px; z-index: -10; max-height: 40vh;">
+        <img src="background.png" width="100%" style="opacity: 50%;">
     </div>
     <script>
         function addDash(){
@@ -177,7 +177,13 @@
                 document.getElementById("성함").disabled = true;
                 document.getElementById("전화번호").disabled = true;
                 document.getElementById("이메일").disabled = true;
+                if(document.getElementById("이메일").value == ""){
+                    document.getElementById("이메일").value = "없음";
+                }
                 document.getElementById("포트폴리오").disabled = true;
+                if(document.getElementById("포트폴리오").value == ""){
+                    document.getElementById("포트폴리오").value = "없음";
+                }
                 document.getElementById("기획").disabled = true;
                 document.getElementById("디자인(일러스트)").disabled = true;
                 document.getElementById("디자인(UI/UX)").disabled = true;
@@ -187,6 +193,7 @@
                 document.getElementById("iOS").disabled = true;
                 document.getElementById("Android").disabled = true;
                 document.getElementById("개인정보동의").disabled = true;
+                document.getElementById("지원분야").style.backgroundColor = "#e8ecef";
                 document.getElementById("sumbitting").style.display = "none";
                 document.getElementById("submited").style.display = "inline-block";
                 fetch("https://script.google.com/macros/s/AKfycbxCigyXS1xLj-raWP7zcYhw8HzuP9n3fAWKfBkF/exec", {
@@ -216,7 +223,13 @@
                     document.getElementById("성함").disabled = false;
                     document.getElementById("전화번호").disabled = false;
                     document.getElementById("이메일").disabled = false;
-                    document.getElementById("포트폴리오").disabled = false;
+                    if(document.getElementById("이메일").value == "없음"){
+                    document.getElementById("이메일").value = "";
+                }
+                document.getElementById("포트폴리오").disabled = false;
+                if(document.getElementById("포트폴리오").value == "없음"){
+                    document.getElementById("포트폴리오").value = "";
+                }
                     document.getElementById("기획").disabled = false;
                     document.getElementById("디자인(일러스트)").disabled = false;
                     document.getElementById("디자인(UI/UX)").disabled = false;
@@ -226,6 +239,7 @@
                     document.getElementById("iOS").disabled = false;
                     document.getElementById("Android").disabled = false;
                     document.getElementById("개인정보동의").disabled = false;
+                    document.getElementById("지원분야").style.backgroundColor = "#ffffff";
                     document.getElementById("sumbitting").style.display = "inline-block";
                     document.getElementById("submited").style.display = "none";
                     $("#failModal").modal("show");
