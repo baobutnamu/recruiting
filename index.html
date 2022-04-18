@@ -28,6 +28,46 @@
         .form-check{
             text-align: left;
         }
+        #지원분야:disabled{
+            background-color: #e8ecef;
+        }
+        .backgroundImage{
+            opacity: 50%;
+        }
+        @media (prefers-color-scheme: dark){
+            html, body{
+                width: 100vw;
+                height: 100vh;
+                background-color: #181a1b80;
+            }
+            h1, p{
+                color: white;
+            }
+            .form-control{
+                background-color: #181a1b;
+            }
+            .form-control:focus{
+                background-color: #181a1b;
+            }
+            .form-control:disabled{
+                background-color: #2c3031;
+            }
+            #지원분야:disabled{
+                background-color: #2c3031;
+            }
+            .backgroundImage{
+                opacity: 100%;
+            }
+            label{
+                color: white;
+            }
+            a{
+                color: white !important;
+            }
+            input{
+                color: white !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -50,7 +90,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>성공적으로 지원되셨습니다. 지원해주셔서 진심으로 감사드리며, 추후 입력하신 전화번호로 연락드리겠습니다. 감사합니다.</p>
+                    <p style="color: black;">성공적으로 지원되셨습니다. 지원해주셔서 진심으로 감사드리며, 추후 입력하신 전화번호로 연락드리겠습니다. 감사합니다.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -62,7 +102,7 @@
         <div class="modal-dialog" style="background-color: #f5c2c8; border-radius: 4px;">
             <div class="alert alert-danger d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                <div>알 수 없는 오류로 인해 지원에 실패했습니다.<br>baobutnamu@gmail.com으로 문의주시면 도와드리겠습니다.</div>
+                <div style="color: black;">알 수 없는 오류로 인해 지원에 실패했습니다.<br>baobutnamu@gmail.com으로 문의주시면 도와드리겠습니다.</div>
             </div>
         </div>
     </div>
@@ -149,7 +189,7 @@
     </form>
     <br><br><br>
     <div style="position: fixed; bottom: 0px; z-index: -10; max-height: 40vh;">
-        <img src="background.png" width="100%" style="opacity: 50%;">
+        <img src="background.png" width="100%" class="backgroundImage">
     </div>
     <script>
         function addDash(){
@@ -213,7 +253,7 @@
                 document.getElementById("iOS").disabled = true;
                 document.getElementById("Android").disabled = true;
                 document.getElementById("개인정보동의").disabled = true;
-                document.getElementById("지원분야").style.backgroundColor = "#e8ecef";
+                document.getElementById("지원분야").disabled = true;
                 document.getElementById("sumbitting").style.display = "none";
                 document.getElementById("submited").style.display = "inline-block";
                 fetch("https://script.google.com/macros/s/AKfycbxCigyXS1xLj-raWP7zcYhw8HzuP9n3fAWKfBkF/exec", {
@@ -259,7 +299,7 @@
                     document.getElementById("iOS").disabled = false;
                     document.getElementById("Android").disabled = false;
                     document.getElementById("개인정보동의").disabled = false;
-                    document.getElementById("지원분야").style.backgroundColor = "#ffffff";
+                    document.getElementById("지원분야").disabled = false;
                     document.getElementById("sumbitting").style.display = "inline-block";
                     document.getElementById("submited").style.display = "none";
                     $("#failModal").modal("show");
