@@ -215,7 +215,12 @@
         console.log("%c아, 지원은 어디에서 하냐구요?", "font-size: 30px; color: #53d769; font-family: 'Pretendard' !important; font-weight: bold;");
         console.log("%c아래 링크에서 지원할 수 있어요!", "font-size: 30px; color: #5fc9f8; font-family: 'Pretendard' !important; font-weight: bold;");
         console.log("%chttps://baobutnamu.kr/recruiting/apply", "font-size: 30px; color: #8e8e93; font-family: 'Pretendard' !important; font-weight: bold;");
+        var numberLength = 0;
         function addDash(){
+            if(numberLength > document.getElementById("전화번호").value.length){
+                document.getElementById("전화번호").value = "";
+            }
+            numberLength = document.getElementById("전화번호").value.length;
             document.getElementById("전화번호").value = document.getElementById("전화번호").value.replace("--", "");
             if(document.getElementById("전화번호").value.length == 3){
                 document.getElementById("전화번호").value += "-";
