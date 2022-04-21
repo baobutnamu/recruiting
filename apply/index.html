@@ -239,6 +239,8 @@
             checking[5] = document.getElementById("DB").checked;
             checking[6] = document.getElementById("iOS").checked;
             checking[7] = document.getElementById("Android").checked;
+            checking[6] = document.getElementById("ML/DL").checked;
+            checking[7] = document.getElementById("Security").checked;
             var jiwon = "";
             for(var i = 0; i < checking.length; i++){
                 if(checking[i]){
@@ -280,6 +282,8 @@
                 document.getElementById("DB").disabled = true;
                 document.getElementById("iOS").disabled = true;
                 document.getElementById("Android").disabled = true;
+                document.getElementById("ML/DL").disabled = true;
+                document.getElementById("Security").disabled = true;
                 document.getElementById("개인정보동의").disabled = true;
                 document.getElementById("지원분야").disabled = true;
                 document.getElementById("sumbitting").style.display = "none";
@@ -326,6 +330,8 @@
                     document.getElementById("DB").disabled = false;
                     document.getElementById("iOS").disabled = false;
                     document.getElementById("Android").disabled = false;
+                    document.getElementById("ML/DL").disabled = false;
+                    document.getElementById("Security").disabled = false;
                     document.getElementById("개인정보동의").disabled = false;
                     document.getElementById("지원분야").disabled = false;
                     document.getElementById("sumbitting").style.display = "inline-block";
